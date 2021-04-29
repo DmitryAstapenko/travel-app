@@ -51,13 +51,13 @@ const Currency: FC<IcurrencyProps> = ({ localCurrency }: IcurrencyProps) => {
     const getRates = async (base: string) => {
       const data = await axios
         .get(
-          `http://api.exchangeratesapi.io/latest?access_key=3f4710e5d6e4359748324b284a6eb6d3&base=${base}`
+          `https://api.exchangeratesapi.io/latest?access_key=3f4710e5d6e4359748324b284a6eb6d3&base=${base}`
         )
         .then((response) => response.data)
         .catch(() => {
           setError("Error loading currency data");
         });
-      if (data.success) {
+      if (data && data.success) {
         const { rates } = data;
         const selectedRates = selectRates(rates, base);
         setDisplayRates(selectedRates);
