@@ -40,6 +40,9 @@ $shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 
 .error {
   color: rgb(107, 24, 24);
+  font-size: 10px;
+  width: 120%;
+  margin-top: -7px;
 }
 
 @media (max-width: 992px) {
