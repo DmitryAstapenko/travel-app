@@ -50,15 +50,19 @@ const Currency: FC<IcurrencyProps> = ({ localCurrency }: IcurrencyProps) => {
   useEffect(() => {
     const getRates = async (base: string) => {
       const data = await axios
-        .get(`https://api.exchangeratesapi.io/latest?base=${base}`)
+        .get(
+          `http://api.exchangeratesapi.io/latest?access_key=3f4710e5d6e4359748324b284a6eb6d3&base=${base}`
+        )
         .then((response) => response.data)
         .catch(() => {
           setError("Error loading currency data");
         });
-      if (data) {
+      if (data.success) {
         const { rates } = data;
         const selectedRates = selectRates(rates, base);
         setDisplayRates(selectedRates);
+      } else {
+        setError("Error loading currency data");
       }
     };
     if (localCurrency) {
@@ -111,7 +115,7 @@ const Currency: FC<IcurrencyProps> = ({ localCurrency }: IcurrencyProps) => {
             </div>
           ))}
         </>
-      ) : error && !minimized ? (
+      ) : error ? (
         <h6 className="error">{error}</h6>
       ) : (
         <div className="mini-loader">
