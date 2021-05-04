@@ -1,0 +1,29 @@
+$shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
+$shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+$shadow-lg: 0 1rem 3rem rgba(0,0,0,.175);
+
+.country-card {
+  max-width: 24rem;
+  min-width: 18rem;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  transition: all 0.5s ease;
+
+  &:hover {
+    box-shadow: $shadow;
+    cursor: pointer;
+  }
+
+  &__flag-img {
+    & > img  {
+      height: 2rem;
+      border-radius: 0.25rem;
+    }
+  }
+
+  &__img {
+    width: auto;
+    height: 15rem;
+    object-fit: cover;
+  }
+}

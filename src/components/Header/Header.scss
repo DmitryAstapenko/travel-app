@@ -1,0 +1,111 @@
+.header {
+  & .navbar {
+    padding: 0.5rem 0;
+  }
+
+  & .navbar-collapse {
+    justify-content: flex-end;
+  }
+
+  & .input-group-text {
+    transition: all 0.25s ease;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__logo {
+    margin: 0;
+    font-size: 2rem;
+    width: 12rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__search {
+    margin-right: auto;
+
+    @media (max-width: 992px) {
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 576px) {
+      .btn {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  &__language {
+    margin-left: 0.75rem;
+    width: max-content;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media (max-width: 992px) {
+      margin-top: 0.5rem;
+      margin-left: 0;
+    }
+
+    & option {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  &__authbar {
+    margin-left: 0.75rem;
+    display: flex;
+    width: 14rem;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 20px;
+
+    @media (max-width: 992px) {
+      margin-top: 0.5rem;
+      margin-left: 0;
+      justify-content: flex-start;
+    }
+
+    &-user {
+      width: 5rem;
+      overflow: hidden;
+      text-align: center;
+      text-overflow: ellipsis;
+    }
+
+    &-avatar {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &-link {
+      font-size: 16px;
+      text-decoration: underline;
+      margin-right: 0.5rem;
+
+      &.signout {
+        color: inherit;
+        font-size: 16px;
+        &:visited {
+          text-decoration: none;
+        }
+        &:active {
+          text-decoration: none;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+}

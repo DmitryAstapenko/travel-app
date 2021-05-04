@@ -1,0 +1,89 @@
+$shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+.currency {
+  box-shadow: $shadow-sm;
+  position: absolute;
+  bottom: 0;
+  cursor: default;
+  outline: none;
+  background: #fafafac9;
+  border-radius: 0.25rem;
+  padding: 10px;
+  width: 200px;
+
+  & span {
+    font-weight: 600;
+  }
+
+  & p {
+    margin: 0;
+  }
+
+  & h5 {
+    margin-bottom: 0.5rem;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20%;
+  }
+}
+
+.title {
+  display: block;
+}
+
+.min-title {
+  display: none;
+}
+
+.error {
+  color: rgb(107, 24, 24);
+  font-size: 10px;
+  width: 120%;
+  margin-top: -7px;
+}
+
+@media (max-width: 992px) {
+  .title {
+    display: none;
+
+    &.min-minimized-title {
+      display: none;
+    }
+    &.min--title {
+      display: block;
+    }
+  }
+  .min-title {
+    &.min-minimized-title {
+      display: block;
+    }
+    &.min--title {
+      display: none;
+    }
+  }
+  .minimized {
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+
+    & h5 {
+      line-height: 1.8;
+      text-align: center;
+      margin-top: -110px;
+    }
+
+    & .loader {
+      transform: scale(0.5) translate(-20px, -40px);
+      display: block;
+      height: 5rem;
+    }
+
+    & .currency__item {
+      display: none;
+    }
+  }
+}

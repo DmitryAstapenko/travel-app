@@ -1,0 +1,10 @@
+$shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+
+.video-container {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+  overflow: hidden;
+  box-shadow: $shadow;
+}
